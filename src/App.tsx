@@ -1,23 +1,8 @@
-import { useState } from 'react';
 import { ArrowRight, Code, Palette, Layers, MessageSquare, CheckCircle, Mail, Linkedin, Github, Twitter } from 'lucide-react';
+import { useForm, ValidationError } from '@formspree/react';
 
 export default function App() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    message: ''
-  });
-  const [formSubmitted, setFormSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setFormSubmitted(true);
-    setTimeout(() => {
-      setFormSubmitted(false);
-      setFormData({ name: '', email: '', company: '', message: '' });
-    }, 3000);
-  };
+  const [state, handleSubmit] = useForm("mwvpgvpz");
 
   const services = [
     {
@@ -296,7 +281,7 @@ export default function App() {
             </p>
           </div>
           
-          {formSubmitted ? (
+          {state.succeeded ? (
             <div className="bg-white p-12 rounded-xl text-center">
               <CheckCircle className="w-16 h-16 text-green-600 mx-auto mb-4" />
               <h3 className="text-2xl mb-2">Thank you for reaching out!</h3>
@@ -306,54 +291,73 @@ export default function App() {
             <form onSubmit={handleSubmit} className="bg-white p-8 md:p-12 rounded-xl shadow-sm">
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <label className="block text-sm mb-2">Name *</label>
+                  <label htmlFor="name" className="block text-sm mb-2">Name *</label>
                   <input 
+                    id="name"
                     type="text"
+                    name="name"
                     required
-                    value={formData.name}
-                    onChange={(e) => setFormData({...formData, name: e.target.value})}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
                     placeholder="Your name"
                   />
+                  <ValidationError 
+                    prefix="Name" 
+                    field="name"
+                    errors={state.errors}
+                    className="text-red-500 text-sm mt-1"
+                  />
                 </div>
                 <div>
-                  <label className="block text-sm mb-2">Email *</label>
+                  <label htmlFor="email" className="block text-sm mb-2">Email *</label>
                   <input 
+                    id="email"
                     type="email"
+                    name="email"
                     required
-                    value={formData.email}
-                    onChange={(e) => setFormData({...formData, email: e.target.value})}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
                     placeholder="you@company.com"
+                  />
+                  <ValidationError 
+                    prefix="Email" 
+                    field="email"
+                    errors={state.errors}
+                    className="text-red-500 text-sm mt-1"
                   />
                 </div>
               </div>
               <div className="mb-6">
-                <label className="block text-sm mb-2">Company</label>
+                <label htmlFor="company" className="block text-sm mb-2">Company</label>
                 <input 
+                  id="company"
                   type="text"
-                  value={formData.company}
-                  onChange={(e) => setFormData({...formData, company: e.target.value})}
+                  name="company"
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
                   placeholder="Your company (optional)"
                 />
               </div>
               <div className="mb-6">
-                <label className="block text-sm mb-2">What are you looking for? *</label>
+                <label htmlFor="message" className="block text-sm mb-2">What are you looking for? *</label>
                 <textarea 
+                  id="message"
+                  name="message"
                   required
-                  value={formData.message}
-                  onChange={(e) => setFormData({...formData, message: e.target.value})}
                   rows={5}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black resize-none"
                   placeholder="Tell us about your project, timeline, and budget..."
                 />
+                <ValidationError 
+                  prefix="Message" 
+                  field="message"
+                  errors={state.errors}
+                  className="text-red-500 text-sm mt-1"
+                />
               </div>
               <button 
                 type="submit"
-                className="w-full bg-black text-white px-8 py-4 rounded-full hover:bg-gray-800 transition flex items-center justify-center gap-2 group"
+                disabled={state.submitting}
+                className="w-full bg-black text-white px-8 py-4 rounded-full hover:bg-gray-800 transition flex items-center justify-center gap-2 group disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Send Inquiry
+                {state.submitting ? 'Sending...' : 'Send Inquiry'}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition" />
               </button>
             </form>
