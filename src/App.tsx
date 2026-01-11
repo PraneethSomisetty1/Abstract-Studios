@@ -387,7 +387,7 @@ export default function App() {
             <div>
               <h4 className="font-semibold mb-4">Connect</h4>
               <div className="flex gap-4">
-                <a href="#" className="text-gray-400 hover:text-white transition">
+                <a href="https://www.linkedin.com/company/abstract-studioss/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition">
                   <Linkedin className="w-6 h-6" />
                 </a>
                 <a href="#" className="text-gray-400 hover:text-white transition">
