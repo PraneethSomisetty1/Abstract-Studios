@@ -55,21 +55,21 @@ export default function App() {
       title: "Enterprise SaaS Platform",
       category: "Full-Stack Development",
       description: "Multi-tenant dashboard with real-time data visualization and role-based access control.",
-      image: "https://images.unsplash.com/photo-1643116774075-acc00caa9a7b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWIlMjBkZXZlbG9wbWVudCUyMGNvZGV8ZW58MXx8fHwxNzY3NjYzMDI3fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image: "/example1.jpg",
       tags: ["React", "Node.js", "PostgreSQL"]
     },
     {
       title: "Mobile-First E-Commerce",
       category: "UI/UX Design",
       description: "Responsive shopping experience with streamlined checkout and inventory management.",
-      image: "https://images.unsplash.com/photo-1605108222700-0d605d9ebafe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBpbnRlcmZhY2V8ZW58MXx8fHwxNzY3NjcxMjUxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image: "/Example2.webp",
       tags: ["Figma", "React Native", "Stripe"]
     },
     {
       title: "Design System & Component Library",
       category: "Design & Development",
       description: "Scalable design system with comprehensive documentation and reusable components.",
-      image: "https://images.unsplash.com/photo-1680016661694-1cd3faf31c3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZXNpZ24lMjB3aXJlZnJhbWV8ZW58MXx8fHwxNzY3NzU3MDUzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image: "/example3.avif",
       tags: ["TypeScript", "Storybook", "Tailwind"]
     }
   ];
