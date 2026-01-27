@@ -1,4 +1,4 @@
-import { ArrowRight, Code, Palette, Layers, MessageSquare, CheckCircle, Mail, Linkedin, Github, Twitter } from 'lucide-react';
+import { ArrowRight, Code, Bot, Layers, MessageSquare, CheckCircle, Mail, Linkedin, Github, Twitter } from 'lucide-react';
 import { useForm, ValidationError } from '@formspree/react';
 
 export default function App() {
@@ -6,14 +6,14 @@ export default function App() {
 
   const services = [
     {
-      icon: <Code className="w-8 h-8" />,
-      title: "Full-Stack Development",
-      description: "End-to-end web applications built with modern frameworks and best practices."
+      icon: <Bot className="w-8 h-8" />,
+      title: "AI Solutions & Agents",
+      description: "Custom AI assistants and intelligent agents tailored for your business needs and workflows."
     },
     {
-      icon: <Palette className="w-8 h-8" />,
-      title: "UI/UX Design",
-      description: "User-centered design that balances aesthetics with functionality and usability."
+      icon: <Code className="w-8 h-8" />,
+      title: "Full-Stack Development",
+      description: "Modern web applications with AI integrations, smart interfaces, and seamless user experiences."
     },
     {
       icon: <Layers className="w-8 h-8" />,
@@ -23,7 +23,7 @@ export default function App() {
     {
       icon: <MessageSquare className="w-8 h-8" />,
       title: "Consulting",
-      description: "Strategic technical guidance and architectural planning for your projects."
+      description: "Strategic guidance on AI adoption, technical architecture, and digital transformation."
     }
   ];
 
@@ -59,33 +59,33 @@ export default function App() {
       tags: ["React", "Node.js", "PostgreSQL"]
     },
     {
-      title: "Mobile-First E-Commerce",
-      category: "UI/UX Design",
-      description: "Responsive shopping experience with streamlined checkout and inventory management.",
+      title: "AI-Enhanced E-commerce Platform",
+      category: "AI-Powered Full-Stack Application",
+      description: "E-commerce platform integrating intelligent recommendations, automated workflows, and a streamlined checkout experience—designed for performance, scalability, and conversion.",
       image: "/Example2.webp",
-      tags: ["Figma", "React Native", "Stripe"]
+      tags: ["React", "AI Integrations", "Payments"]
     },
     {
-      title: "Design System & Component Library",
-      category: "Design & Development",
-      description: "Scalable design system with comprehensive documentation and reusable components.",
-      image: "/example3.avif",
-      tags: ["TypeScript", "Storybook", "Tailwind"]
+      title: "AI-Powered Customer Support Agent",
+      category: "AI Solutions",
+      description: "Custom AI support agent designed to handle customer inquiries using natural language understanding and automated workflows, seamlessly escalating to human support when needed.",
+      image: "/example3.png",
+      tags: ["OpenAI", "LangChain", "Next.js"]
     }
   ];
 
   const differentiators = [
     {
-      title: "Engineering-First Approach",
-      description: "Clean, maintainable code with thorough documentation and testing."
+      title: "AI-Native Thinking",
+      description: "We understand how to leverage AI effectively—building solutions that are practical, not just trendy."
     },
     {
-      title: "Design Excellence",
-      description: "Thoughtful interfaces that users love, backed by research and iteration."
+      title: "Engineering Excellence",
+      description: "Clean, maintainable code with thorough documentation, testing, and scalable architecture."
     },
     {
       title: "Direct Collaboration",
-      description: "Work directly with experienced developers and designers, not account managers."
+      description: "Work directly with experienced developers."
     },
     {
       title: "Transparent Process",
@@ -123,8 +123,8 @@ export default function App() {
                 Building Digital Products That Matter
               </h1>
               <p className="text-xl text-gray-600 mb-8">
-                Full-stack development and design services for startups and small businesses. 
-                From concept to deployment, we bring your vision to life.
+                We design and build intelligent digital products, combining full-stack development with custom AI solutions. 
+                From smart websites to bespoke AI agents and assistants, we help businesses integrate automation and intelligence into real, production-ready systems.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a 
